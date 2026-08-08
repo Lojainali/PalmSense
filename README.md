@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # palmsense_app
 
 A new Flutter project.
@@ -14,3 +15,6 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+=======
+# palm-sense-updated
+>>>>>>> 00f9c58a149236b1da210e5388c3dda40d64bc70
