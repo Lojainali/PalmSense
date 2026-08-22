@@ -5,9 +5,8 @@ import '../../core/widgets/primary_button.dart';
 import '../../data/mock/mock_data.dart';
 import '../../logic/auth/auth_cubit.dart';
 
-/// Screen: Edit Profile (Profile -> Account -> Edit Profile)
-/// Redirects:
-///  - "Save Changes" -> updates AuthCubit user, then pop() back to Profile
+import '../../logic/language/language_cubit.dart';
+
 class EditProfileScreen extends StatefulWidget {
   const EditProfileScreen({super.key});
 
@@ -26,7 +25,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
     final user = context.read<AuthCubit>().state.user ?? MockData.currentUser;
     _nameController = TextEditingController(text: user.fullName);
     _emailController = TextEditingController(text: user.email);
-    _phoneController = TextEditingController(text: '+971 50 123 4567');
+    _phoneController = TextEditingController(text: user.phoneNumber.isNotEmpty ? user.phoneNumber : '');
   }
 
   @override
@@ -37,46 +36,65 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
     super.dispose();
   }
 
+  void _saveChanges() {
+    if (_nameController.text.trim().isEmpty ||
+        _emailController.text.trim().isEmpty) {
+      ScaffoldMessenger.of(context)
+        ..hideCurrentSnackBar()
+        ..showSnackBar(const SnackBar(content: Text('Please fill in required fields')));
+      return;
+    }
+
+    context.read<AuthCubit>().updateProfile(
+      fullName: _nameController.text,
+      email: _emailController.text,
+    );
+    ScaffoldMessenger.of(context)
+        .showSnackBar(const SnackBar(content: Text('Profile updated')));
+    Navigator.of(context).pop();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Edit Profile')),
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.all(20),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            CustomTextField(label: 'Full Name', hint: 'Full name', controller: _nameController),
-            const SizedBox(height: 16),
-            CustomTextField(
-              label: 'Email Address',
-              hint: 'Email address',
-              controller: _emailController,
-              keyboardType: TextInputType.emailAddress,
+    return BlocBuilder<LanguageCubit, String>(
+      builder: (context, lang) {
+        final isAr = lang.contains('ar') || lang.contains('العربية');
+        return Scaffold(
+          appBar: AppBar(title: Text(isAr ? 'تعديل الملف الشخصي' : 'Edit Profile')),
+          body: SingleChildScrollView(
+            padding: const EdgeInsets.all(20),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                CustomTextField(
+                  label: isAr ? 'الاسم الكامل' : 'Full Name',
+                  hint: isAr ? 'الاسم الكامل' : 'Full Name',
+                  controller: _nameController,
+                ),
+                const SizedBox(height: 16),
+                CustomTextField(
+                  label: isAr ? 'البريد الإلكتروني' : 'Email Address',
+                  hint: 'Email address',
+                  controller: _emailController,
+                  keyboardType: TextInputType.emailAddress,
+                ),
+                const SizedBox(height: 16),
+                CustomTextField(
+                  label: isAr ? 'رقم الهاتف' : 'Phone Number',
+                  hint: '+20 123 456 7890',
+                  controller: _phoneController,
+                  keyboardType: TextInputType.phone,
+                ),
+                const SizedBox(height: 28),
+                PrimaryButton(
+                  label: isAr ? 'حفظ التغييرات' : 'Save Changes',
+                  onPressed: _saveChanges,
+                ),
+              ],
             ),
-            const SizedBox(height: 16),
-            CustomTextField(
-              label: 'Phone Number',
-              hint: 'Phone number',
-              controller: _phoneController,
-              keyboardType: TextInputType.phone,
-            ),
-            const SizedBox(height: 28),
-            PrimaryButton(
-              label: 'Save Changes',
-              onPressed: () {
-                context.read<AuthCubit>().updateProfile(
-                  fullName: _nameController.text,
-                  email: _emailController.text,
-                );
-                ScaffoldMessenger.of(context)
-                    .showSnackBar(const SnackBar(content: Text('Profile updated')));
-                Navigator.of(context).pop();
-              },
-            ),
-          ],
-        ),
-      ),
+          ),
+        );
+      },
     );
   }
 }

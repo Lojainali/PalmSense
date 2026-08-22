@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// Central color palette for PalmSense, sampled from the product's
-/// light ("Fresh Palm Green") and dark ("Midnight Green #121A16") themes.
+
 class AppColors {
   AppColors._();
 

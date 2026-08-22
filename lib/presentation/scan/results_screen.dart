@@ -1,16 +1,8 @@
 import 'package:flutter/material.dart';
-import '../../core/routes/app_router.dart';
-import '../../core/routes/app_routes.dart';
 import '../../core/theme/app_colors.dart';
 import '../../core/theme/app_text_styles.dart';
-import '../../core/widgets/primary_button.dart';
 import '../../data/models/scan_model.dart';
 
-/// Screen: Results ("Fungal Disease Detected")
-/// Reached from: CameraScreen after a capture completes.
-/// Redirects:
-///  - Back arrow             -> pop() (back to Dashboard, since Camera used pushReplacement)
-///  - "Generate Full Report" -> AppRoutes.exportReports (push)
 class ResultsScreen extends StatelessWidget {
   final ScanModel scan;
   const ResultsScreen({super.key, required this.scan});
@@ -79,7 +71,7 @@ class ResultsScreen extends StatelessWidget {
                     children: [
                       Text('AI Confidence', style: AppTextStyles.body(context, size: 13)),
                       Text('${scan.confidence.toInt()}%',
-                          style: TextStyle(
+                          style: const TextStyle(
                               color: AppColors.critical,
                               fontWeight: FontWeight.w800,
                               fontSize: 14)),
@@ -92,7 +84,7 @@ class ResultsScreen extends StatelessWidget {
                       value: scan.confidence / 100,
                       minHeight: 7,
                       backgroundColor: Theme.of(context).dividerColor,
-                      valueColor: AlwaysStoppedAnimation(AppColors.critical),
+                      valueColor: const AlwaysStoppedAnimation(AppColors.critical),
                     ),
                   ),
                   const SizedBox(height: 16),
@@ -176,11 +168,6 @@ class ResultsScreen extends StatelessWidget {
                   );
                 }).toList(),
               ),
-            ),
-            const SizedBox(height: 24),
-            PrimaryButton(
-              label: 'Generate Full Report',
-              onPressed: () => Navigator.of(context).pushNamed(AppRoutes.exportReports),
             ),
             const SizedBox(height: 12),
           ],

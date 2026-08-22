@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../logic/language/language_cubit.dart';
 import '../theme/app_colors.dart';
 
-/// Bottom navigation bar shown across the main shell (Home / Library /
-/// Profile tabs). Tapping "Scan" doesn't switch a tab — [onScanTap]
-/// pushes the full-screen camera flow instead, matching the recorded GUI.
 class AppBottomNavBar extends StatelessWidget {
   final int currentIndex; // 0 Home, 1 Library, 2 Profile
   final ValueChanged<int> onTabSelected;
@@ -49,22 +48,27 @@ class AppBottomNavBar extends StatelessWidget {
       );
     }
 
-    return DecoratedBox(
-      decoration: BoxDecoration(
-        color: Theme.of(context).cardColor,
-        border: Border(top: BorderSide(color: Theme.of(context).dividerColor)),
-      ),
-      child: SafeArea(
-        top: false,
-        child: Row(
-          children: [
-            item(Icons.home_rounded, 'Home', 0),
-            item(Icons.camera_alt_rounded, 'Scan', -1, onTap: onScanTap),
-            item(Icons.menu_book_rounded, 'Library', 1),
-            item(Icons.person_rounded, 'Profile', 2),
-          ],
-        ),
-      ),
+    return BlocBuilder<LanguageCubit, String>(
+      builder: (context, lang) {
+        final isAr = lang.contains('ar') || lang.contains('العربية');
+        return DecoratedBox(
+          decoration: BoxDecoration(
+            color: Theme.of(context).cardColor,
+            border: Border(top: BorderSide(color: Theme.of(context).dividerColor)),
+          ),
+          child: SafeArea(
+            top: false,
+            child: Row(
+              children: [
+                item(Icons.home_rounded, isAr ? 'الرئيسية' : 'Home', 0),
+                item(Icons.camera_alt_rounded, isAr ? 'فحص' : 'Scan', -1, onTap: onScanTap),
+                item(Icons.menu_book_rounded, isAr ? 'المكتبة' : 'Library', 1),
+                item(Icons.person_rounded, isAr ? 'الملف الشخصي' : 'Profile', 2),
+              ],
+            ),
+          ),
+        );
+      },
     );
   }
 }

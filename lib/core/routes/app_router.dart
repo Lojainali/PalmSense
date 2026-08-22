@@ -1,26 +1,73 @@
-/// Central registry of route names used with Navigator's named routes,
-/// so every screen-to-screen redirect is explicit and easy to trace.
-class AppRoutes {
-  AppRoutes._();
+import 'package:flutter/material.dart';
+import '../../data/models/disease_model.dart';
+import '../../data/models/scan_model.dart';
+import '../../presentation/auth/forgot_password_screen.dart';
+import '../../presentation/auth/login_screen.dart';
+import '../../presentation/auth/signup_screen.dart';
+import '../../presentation/library/disease_detail_screen.dart';
+import '../../presentation/main_shell/main_shell.dart';
+import '../../presentation/profile/edit_profile_screen.dart';
+import '../../presentation/profile/farm_details_screen.dart';
+import '../../presentation/profile/language_screen.dart';
+import '../../presentation/profile/notification_preferences_screen.dart';
+import '../../presentation/profile/scan_history_screen.dart';
+import '../../presentation/scan/camera_screen.dart';
+import '../../presentation/scan/results_screen.dart';
+import 'app_routes.dart';
 
-  static const String login = '/login';
-  static const String signUp = '/sign-up';
-  static const String forgotPassword = '/forgot-password';
+class AppRouter {
+  AppRouter._();
 
-  static const String mainShell = '/main'; // hosts Home / Library / Profile tabs
+  static Route<dynamic> onGenerateRoute(RouteSettings settings) {
+    switch (settings.name) {
+      case AppRoutes.login:
+        return MaterialPageRoute(builder: (_) => const LoginScreen(), settings: settings);
 
-  static const String camera = '/camera';
-  static const String results = '/results';
+      case AppRoutes.signUp:
+        return MaterialPageRoute(builder: (_) => const SignUpScreen(), settings: settings);
 
-  static const String diseaseDetail = '/library/disease-detail';
+      case AppRoutes.forgotPassword:
+        return MaterialPageRoute(
+            builder: (_) => const ForgotPasswordScreen(), settings: settings);
 
-  static const String editProfile = '/profile/edit';
-  static const String farmDetails = '/profile/farm-details';
-  static const String notificationPreferences = '/profile/notifications';
-  static const String scanHistory = '/profile/scan-history';
-  static const String exportReports = '/profile/export-reports';
-  static const String aiModelVersion = '/profile/ai-model-version';
-  static const String language = '/profile/language';
-  static const String darkMode = '/profile/dark-mode';
-  static const String helpSupport = '/profile/help-support';
+      case AppRoutes.mainShell:
+        return MaterialPageRoute(builder: (_) => const MainShell(), settings: settings);
+
+      case AppRoutes.camera:
+        return MaterialPageRoute(builder: (_) => const CameraScreen(), settings: settings);
+
+      case AppRoutes.results:
+        final scan = settings.arguments as ScanModel;
+        return MaterialPageRoute(builder: (_) => ResultsScreen(scan: scan), settings: settings);
+
+      case AppRoutes.diseaseDetail:
+        final disease = settings.arguments as DiseaseModel;
+        return MaterialPageRoute(
+            builder: (_) => DiseaseDetailScreen(disease: disease), settings: settings);
+
+      case AppRoutes.editProfile:
+        return MaterialPageRoute(builder: (_) => const EditProfileScreen(), settings: settings);
+
+      case AppRoutes.farmDetails:
+        return MaterialPageRoute(builder: (_) => const FarmDetailsScreen(), settings: settings);
+
+      case AppRoutes.notificationPreferences:
+        return MaterialPageRoute(
+            builder: (_) => const NotificationPreferencesScreen(), settings: settings);
+
+      case AppRoutes.scanHistory:
+        return MaterialPageRoute(builder: (_) => const ScanHistoryScreen(), settings: settings);
+
+      case AppRoutes.language:
+        return MaterialPageRoute(builder: (_) => const LanguageScreen(), settings: settings);
+
+      default:
+        return MaterialPageRoute(
+          builder: (_) => Scaffold(
+            body: Center(child: Text('No route defined for ${settings.name}')),
+          ),
+          settings: settings,
+        );
+    }
+  }
 }

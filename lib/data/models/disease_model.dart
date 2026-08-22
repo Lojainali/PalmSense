@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 
-/// A reference entry in the Fungal Disease Library, and also the shape
-/// used to describe a disease detected during a scan.
+
 class DiseaseModel {
   final String id;
   final String name;
   final String scientificName;
-  final String severity; // Critical, High, Medium, Low
+  final String severity;
   final int recordedCases;
   final String description;
   final IconData icon;

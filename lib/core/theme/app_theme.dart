@@ -53,11 +53,11 @@ class AppTheme {
         ),
       ),
       switchTheme: SwitchThemeData(
-        thumbColor: MaterialStateProperty.resolveWith(
-              (states) => states.contains(MaterialState.selected) ? Colors.white : Colors.white,
+        thumbColor: WidgetStateProperty.resolveWith(
+              (states) => states.contains(WidgetState.selected) ? Colors.white : Colors.white,
         ),
-        trackColor: MaterialStateProperty.resolveWith(
-              (states) => states.contains(MaterialState.selected)
+        trackColor: WidgetStateProperty.resolveWith(
+              (states) => states.contains(WidgetState.selected)
               ? AppColors.primary
               : const Color(0xFFD5DDD8),
         ),
@@ -114,11 +114,11 @@ class AppTheme {
         ),
       ),
       switchTheme: SwitchThemeData(
-        thumbColor: MaterialStateProperty.resolveWith(
-              (states) => states.contains(MaterialState.selected) ? Colors.white : Colors.white,
+        thumbColor: WidgetStateProperty.resolveWith(
+              (states) => states.contains(WidgetState.selected) ? Colors.white : Colors.white,
         ),
-        trackColor: MaterialStateProperty.resolveWith(
-              (states) => states.contains(MaterialState.selected)
+        trackColor: WidgetStateProperty.resolveWith(
+              (states) => states.contains(WidgetState.selected)
               ? AppColors.accent
               : const Color(0xFF3A463D),
         ),

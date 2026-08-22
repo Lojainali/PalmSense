@@ -3,7 +3,7 @@ import '../../data/models/disease_model.dart';
 
 class LibraryState extends Equatable {
   final String query;
-  final String severityFilter; // 'All', 'Critical', 'High', 'Medium', 'Low'
+  final String severityFilter;
   final List<DiseaseModel> results;
 
   const LibraryState({

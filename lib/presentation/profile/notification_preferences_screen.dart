@@ -3,8 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../core/theme/app_text_styles.dart';
 import '../../logic/notification_prefs/notification_prefs_cubit.dart';
 
-/// Screen: Notification Preferences (Profile -> Account -> Notification Preferences)
-/// No further redirects — toggles are self-contained via NotificationPrefsCubit.
 class NotificationPreferencesScreen extends StatelessWidget {
   const NotificationPreferencesScreen({super.key});
 

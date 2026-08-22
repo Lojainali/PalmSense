@@ -1,22 +1,40 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../data/mock/mock_data.dart';
 import '../../data/models/user_model.dart';
+import '../../data/repositories/auth_repository.dart';
 import 'auth_state.dart';
 
-/// Handles Login / Sign Up / Sign Out. There is no backend yet, so
-/// [login] and [signUp] simply validate input locally and simulate a
-/// network delay before "authenticating" with the mock user profile.
 class AuthCubit extends Cubit<AuthState> {
-  AuthCubit() : super(const AuthState());
+  final AuthRepository _authRepository;
+
+  AuthCubit({AuthRepository? authRepository})
+      : _authRepository = authRepository ?? AuthRepository(),
+        super(const AuthState());
 
   Future<void> login({required String email, required String password}) async {
     if (email.trim().isEmpty || password.trim().isEmpty) {
-      emit(state.copyWith(status: AuthStatus.failure, errorMessage: 'Please fill in all fields'));
+      emit(state.copyWith(
+          status: AuthStatus.failure, errorMessage: 'Please fill in all fields'));
       return;
     }
     emit(state.copyWith(status: AuthStatus.submitting));
-    await Future.delayed(const Duration(milliseconds: 900));
-    emit(state.copyWith(status: AuthStatus.authenticated, user: MockData.currentUser));
+    try {
+      final credential = await _authRepository.signIn(
+        email: email.trim(),
+        password: password.trim(),
+      );
+      final user = UserModel(
+        fullName: credential.user?.displayName ?? 'PalmSense User',
+        email: credential.user?.email ?? email,
+        farmName: 'Main Grove',
+        totalScans: 0,
+        diseasesFound: 0,
+        farmBlocks: 2,
+      );
+      emit(state.copyWith(status: AuthStatus.authenticated, user: user));
+    } catch (e) {
+      emit(state.copyWith(
+          status: AuthStatus.failure, errorMessage: _cleanFirebaseError(e)));
+    }
   }
 
   Future<void> signUp({
@@ -24,45 +42,76 @@ class AuthCubit extends Cubit<AuthState> {
     required String email,
     required String password,
     required String confirmPassword,
-    required bool agreedToTerms,
   }) async {
-    if (fullName.trim().isEmpty || email.trim().isEmpty || password.trim().isEmpty) {
-      emit(state.copyWith(status: AuthStatus.failure, errorMessage: 'Please fill in all fields'));
+    if (fullName.trim().isEmpty ||
+        email.trim().isEmpty ||
+        password.trim().isEmpty) {
+      emit(state.copyWith(
+          status: AuthStatus.failure, errorMessage: 'Please fill in all fields'));
       return;
     }
     if (password != confirmPassword) {
-      emit(state.copyWith(status: AuthStatus.failure, errorMessage: 'Passwords do not match'));
-      return;
-    }
-    if (!agreedToTerms) {
       emit(state.copyWith(
-        status: AuthStatus.failure,
-        errorMessage: 'Please agree to the Terms of Service',
-      ));
+          status: AuthStatus.failure, errorMessage: 'Passwords do not match'));
       return;
     }
+
     emit(state.copyWith(status: AuthStatus.submitting));
-    await Future.delayed(const Duration(milliseconds: 900));
-    final newUser = UserModel(
-      fullName: fullName,
-      email: email,
-      farmName: MockData.currentUser.farmName,
-      totalScans: 0,
-      diseasesFound: 0,
-      farmBlocks: MockData.currentUser.farmBlocks,
-    );
-    emit(state.copyWith(status: AuthStatus.authenticated, user: newUser));
+    try {
+      await _authRepository.signUp(
+        email: email.trim(),
+        password: password.trim(),
+        fullName: fullName.trim(),
+      );
+      final newUser = UserModel(
+        fullName: fullName.trim(),
+        email: email.trim(),
+        farmName: 'Main Grove',
+        totalScans: 0,
+        diseasesFound: 0,
+        farmBlocks: 2,
+      );
+      emit(state.copyWith(status: AuthStatus.authenticated, user: newUser));
+    } catch (e) {
+      emit(state.copyWith(
+          status: AuthStatus.failure, errorMessage: _cleanFirebaseError(e)));
+    }
   }
 
-  void updateProfile({String? fullName, String? email, String? farmName}) {
+  Future<void> updateProfile({
+    String? fullName,
+    String? email,
+    String? phoneNumber,
+    String? farmName,
+  }) async {
     final current = state.user;
     if (current == null) return;
-    emit(state.copyWith(
-      user: current.copyWith(fullName: fullName, email: email, farmName: farmName),
-    ));
+    final updated = current.copyWith(
+      fullName: fullName,
+      email: email,
+      phoneNumber: phoneNumber,
+      farmName: farmName,
+    );
+    emit(state.copyWith(user: updated));
+    await _authRepository.updateProfile(
+      fullName: fullName,
+      phoneNumber: phoneNumber,
+      farmName: farmName,
+    );
   }
 
-  void signOut() {
+  Future<void> signOut() async {
+    await _authRepository.signOut();
     emit(const AuthState());
+  }
+
+  static String _cleanFirebaseError(dynamic e) {
+    final msg = e.toString();
+    if (msg.contains('user-not-found')) return 'No user found with this email.';
+    if (msg.contains('wrong-password')) return 'Incorrect password.';
+    if (msg.contains('email-already-in-use')) return 'Email is already registered.';
+    if (msg.contains('invalid-email')) return 'Invalid email address.';
+    if (msg.contains('weak-password')) return 'Password should be at least 6 characters.';
+    return msg.replaceAll(RegExp(r'\[.*?\]'), '').trim();
   }
 }

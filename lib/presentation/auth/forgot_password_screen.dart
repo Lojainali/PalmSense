@@ -4,9 +4,6 @@ import '../../core/theme/app_text_styles.dart';
 import '../../core/widgets/custom_text_field.dart';
 import '../../core/widgets/primary_button.dart';
 
-/// Screen: Forgot Password (reached from Login -> "Forgot password?")
-/// Redirects:
-///  - "Send Reset Link" -> shows confirmation, then pop() back to Login
 class ForgotPasswordScreen extends StatefulWidget {
   const ForgotPasswordScreen({super.key});
 
@@ -15,7 +12,7 @@ class ForgotPasswordScreen extends StatefulWidget {
 }
 
 class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
-  final _emailController = TextEditingController(text: 'sara.ahmed@palmfarm.ae');
+  final _emailController = TextEditingController();
   bool _sent = false;
 
   @override
@@ -39,7 +36,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
             const SizedBox(height: 24),
             CustomTextField(
               label: 'Email Address',
-              hint: 'sara.ahmed@palmfarm.ae',
+              hint: 'example@gmail.com',
               controller: _emailController,
               keyboardType: TextInputType.emailAddress,
             ),

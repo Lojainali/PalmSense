@@ -34,7 +34,7 @@ class StatChip extends StatelessWidget {
             Text(
               label,
               textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 11, color: foreground.withOpacity(0.85)),
+              style: TextStyle(fontSize: 11, color: foreground.withValues(alpha: 0.85)),
             ),
           ],
         ),

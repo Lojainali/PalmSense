@@ -1,15 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../core/routes/app_router.dart';
 import '../../core/routes/app_routes.dart';
 import '../../logic/scan/scan_cubit.dart';
 import '../../logic/scan/scan_state.dart';
 
-/// Screen: Camera ("Fungal Scan Mode")
-/// Reached from: Dashboard "Start New Scan" card, or bottom nav "Scan" button.
-/// Redirects:
-///  - Shutter button tapped -> simulate capture+analysis, then push AppRoutes.results
-///  - Back / gallery icon   -> Navigator.pop() back to where Scan was launched from
 class CameraScreen extends StatelessWidget {
   const CameraScreen({super.key});
 
@@ -48,7 +42,7 @@ class _CameraView extends StatelessWidget {
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
                     colors: [
-                      Colors.green.shade900.withOpacity(0.55),
+                      Colors.green.shade900.withValues(alpha: 0.55),
                       Colors.black,
                     ],
                   ),
@@ -138,7 +132,12 @@ class _CameraView extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          _RoundIconButton(icon: Icons.photo_library_outlined, onTap: () {}),
+                          _RoundIconButton(
+                            icon: Icons.photo_library_outlined,
+                            onTap: analyzing
+                                ? () {}
+                                : () => context.read<ScanCubit>().pickFromGallery(),
+                          ),
                           GestureDetector(
                             onTap: analyzing ? null : () => context.read<ScanCubit>().capture(),
                             child: Container(

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "535961915357",
+    "project_id": "palmsense-app-106d9",
+    "storage_bucket": "palmsense-app-106d9.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:535961915357:android:624865804d597020497034",
+        "android_client_info": {
+          "package_name": "com.example.palmsense_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCPKvKN3FMPL8MMvn9xmU45YlD8dTXy_cg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

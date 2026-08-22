@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'theme_state.dart';
 
-/// Drives the app-wide light / dark / system theme, wired to the
-/// "Dark Mode" row on the Profile screen.
+
 class ThemeCubit extends Cubit<AppThemeState> {
   ThemeCubit() : super(const AppThemeState());
 

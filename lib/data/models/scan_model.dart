@@ -1,14 +1,13 @@
+import 'package:flutter/material.dart';
 import 'disease_model.dart';
 
-/// Represents a single completed scan result, tying a [DiseaseModel]
-/// diagnosis to a palm block, timestamp and AI confidence score.
 class ScanModel {
   final String id;
   final DiseaseModel disease;
-  final String blockLabel; // e.g. "Block C-4 · Palm #12"
-  final String dateLabel; // e.g. "07 Aug 2026"
-  final String timeAgo; // e.g. "2h ago"
-  final double confidence; // 0-100
+  final String blockLabel;
+  final String dateLabel;
+  final String timeAgo;
+  final double confidence;
 
   const ScanModel({
     required this.id,
@@ -18,6 +17,36 @@ class ScanModel {
     required this.timeAgo,
     required this.confidence,
   });
+
+  Map<String, dynamic> toJson() => {
+        'id': id,
+        'diseaseId': disease.id,
+        'diseaseName': disease.name,
+        'blockLabel': blockLabel,
+        'dateLabel': dateLabel,
+        'timeAgo': timeAgo,
+        'confidence': confidence,
+      };
+
+  factory ScanModel.fromJson(Map<String, dynamic> json) {
+    return ScanModel(
+      id: json['id'] as String? ?? '',
+      disease: DiseaseModel(
+        id: json['diseaseId'] as String? ?? 'healthy',
+        name: json['diseaseName'] as String? ?? 'Healthy',
+        scientificName: '',
+        severity: 'Low',
+        recordedCases: 0,
+        description: '',
+        icon: Icons.eco,
+        swatch: Colors.green,
+      ),
+      blockLabel: json['blockLabel'] as String? ?? '',
+      dateLabel: json['dateLabel'] as String? ?? '',
+      timeAgo: json['timeAgo'] as String? ?? '',
+      confidence: (json['confidence'] as num?)?.toDouble() ?? 0.0,
+    );
+  }
 }
 
 class AlertModel {

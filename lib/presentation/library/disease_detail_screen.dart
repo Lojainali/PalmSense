@@ -27,7 +27,7 @@ class DiseaseDetailScreen extends StatelessWidget {
                   width: 64,
                   height: 64,
                   decoration: BoxDecoration(
-                    color: disease.swatch.withOpacity(0.25),
+                    color: disease.swatch.withValues(alpha: 0.25),
                     borderRadius: BorderRadius.circular(14),
                   ),
                   child: Icon(disease.icon, color: disease.swatch, size: 30),
@@ -78,7 +78,7 @@ class DiseaseDetailScreen extends StatelessWidget {
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Icon(Icons.check_circle_outline, size: 18, color: AppColors.primary),
+                      const Icon(Icons.check_circle_outline, size: 18, color: AppColors.primary),
                       const SizedBox(width: 10),
                       Expanded(child: Text(a, style: AppTextStyles.body(context, size: 13.5))),
                     ],

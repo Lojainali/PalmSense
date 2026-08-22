@@ -1,6 +1,7 @@
 class UserModel {
   final String fullName;
   final String email;
+  final String phoneNumber;
   final String farmName;
   final int totalScans;
   final int diseasesFound;
@@ -9,6 +10,7 @@ class UserModel {
   const UserModel({
     required this.fullName,
     required this.email,
+    this.phoneNumber = '',
     required this.farmName,
     required this.totalScans,
     required this.diseasesFound,
@@ -18,11 +20,13 @@ class UserModel {
   UserModel copyWith({
     String? fullName,
     String? email,
+    String? phoneNumber,
     String? farmName,
   }) {
     return UserModel(
       fullName: fullName ?? this.fullName,
       email: email ?? this.email,
+      phoneNumber: phoneNumber ?? this.phoneNumber,
       farmName: farmName ?? this.farmName,
       totalScans: totalScans,
       diseasesFound: diseasesFound,
