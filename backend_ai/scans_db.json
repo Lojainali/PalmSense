@@ -1,0 +1,627 @@
+[
+  {
+    "id": "d5016e60-f66a-49c9-9c2a-5754ff68223f",
+    "userEmail": "",
+    "predictedClass": "6. Fusarium Wilt",
+    "confidence": 65.15,
+    "differential": [
+      {
+        "name": "6. Fusarium Wilt",
+        "confidence": 65.15
+      },
+      {
+        "name": "Healthy sample",
+        "confidence": 23.95
+      },
+      {
+        "name": "Leaf spots",
+        "confidence": 7.58
+      },
+      {
+        "name": "7. Rachis Blight",
+        "confidence": 3.14
+      },
+      {
+        "name": "4. Black Scorch",
+        "confidence": 0.18
+      }
+    ],
+    "blockLabel": "Block A",
+    "dateLabel": "2026-09-27",
+    "timeLabel": "13:21:51",
+    "createdAt": "2026-09-27T13:21:51.983766"
+  },
+  {
+    "id": "c444f258-4abe-4bef-97e5-20096bd02d51",
+    "userEmail": "",
+    "predictedClass": "6. Fusarium Wilt",
+    "confidence": 54.66,
+    "differential": [
+      {
+        "name": "6. Fusarium Wilt",
+        "confidence": 54.66
+      },
+      {
+        "name": "Leaf spots",
+        "confidence": 37.91
+      },
+      {
+        "name": "Healthy sample",
+        "confidence": 6.17
+      },
+      {
+        "name": "4. Black Scorch",
+        "confidence": 0.64
+      },
+      {
+        "name": "7. Rachis Blight",
+        "confidence": 0.61
+      }
+    ],
+    "blockLabel": "Block A",
+    "dateLabel": "2026-09-27",
+    "timeLabel": "13:23:02",
+    "createdAt": "2026-09-27T13:23:02.947622"
+  },
+  {
+    "id": "f3913d9c-0028-4076-937a-0f5571d33d02",
+    "userEmail": "",
+    "predictedClass": "6. Fusarium Wilt",
+    "diseaseName": "6. Fusarium Wilt",
+    "confidence": 56.66,
+    "differential": [
+      {
+        "name": "6. Fusarium Wilt",
+        "confidence": 56.66
+      },
+      {
+        "name": "Leaf spots",
+        "confidence": 29.71
+      },
+      {
+        "name": "Healthy sample",
+        "confidence": 9.86
+      },
+      {
+        "name": "7. Rachis Blight",
+        "confidence": 3.14
+      },
+      {
+        "name": "4. Black Scorch",
+        "confidence": 0.63
+      }
+    ],
+    "blockLabel": "Block A",
+    "dateLabel": "2026-09-27",
+    "timeLabel": "13:43:22",
+    "createdAt": "2026-09-27T13:43:22.039922"
+  },
+  {
+    "id": "3ffd1e4e-cd7b-48eb-b0ed-6b3f91986068",
+    "userEmail": "",
+    "predictedClass": "6. Fusarium Wilt",
+    "diseaseName": "6. Fusarium Wilt",
+    "confidence": 70.0,
+    "differential": [
+      {
+        "name": "6. Fusarium Wilt",
+        "confidence": 70.0
+      },
+      {
+        "name": "Leaf spots",
+        "confidence": 21.89
+      },
+      {
+        "name": "Healthy sample",
+        "confidence": 6.78
+      },
+      {
+        "name": "7. Rachis Blight",
+        "confidence": 0.81
+      },
+      {
+        "name": "4. Black Scorch",
+        "confidence": 0.52
+      }
+    ],
+    "blockLabel": "Block A",
+    "dateLabel": "2026-09-27",
+    "timeLabel": "13:44:28",
+    "createdAt": "2026-09-27T13:44:28.027743"
+  },
+  {
+    "id": "1958a1c0-13e5-4b3b-a7a2-7e6408082322",
+    "userEmail": "",
+    "predictedClass": "6. Fusarium Wilt",
+    "diseaseName": "6. Fusarium Wilt",
+    "confidence": 53.13,
+    "differential": [
+      {
+        "name": "6. Fusarium Wilt",
+        "confidence": 53.13
+      },
+      {
+        "name": "Leaf spots",
+        "confidence": 24.75
+      },
+      {
+        "name": "Healthy sample",
+        "confidence": 17.54
+      },
+      {
+        "name": "7. Rachis Blight",
+        "confidence": 3.45
+      },
+      {
+        "name": "4. Black Scorch",
+        "confidence": 1.14
+      }
+    ],
+    "blockLabel": "Block A",
+    "dateLabel": "2026-09-27",
+    "timeLabel": "13:46:00",
+    "createdAt": "2026-09-27T13:46:00.930032"
+  },
+  {
+    "id": "20e38f12-ba7c-41d4-bff1-351f36820777",
+    "userEmail": "",
+    "predictedClass": "4. Black Scorch",
+    "diseaseName": "4. Black Scorch",
+    "confidence": 43.3,
+    "differential": [
+      {
+        "name": "4. Black Scorch",
+        "confidence": 43.3
+      },
+      {
+        "name": "Healthy sample",
+        "confidence": 33.75
+      },
+      {
+        "name": "Leaf spots",
+        "confidence": 22.42
+      },
+      {
+        "name": "7. Rachis Blight",
+        "confidence": 0.34
+      },
+      {
+        "name": "6. Fusarium Wilt",
+        "confidence": 0.18
+      }
+    ],
+    "blockLabel": "Block A",
+    "dateLabel": "2026-09-27",
+    "timeLabel": "13:49:46",
+    "createdAt": "2026-09-27T13:49:46.367438"
+  },
+  {
+    "id": "ac652d7b-eca5-4997-9572-2152a2950c7c",
+    "userEmail": "",
+    "predictedClass": "Healthy sample",
+    "diseaseName": "Healthy sample",
+    "confidence": 58.65,
+    "differential": [
+      {
+        "name": "Healthy sample",
+        "confidence": 58.65
+      },
+      {
+        "name": "Leaf spots",
+        "confidence": 37.32
+      },
+      {
+        "name": "6. Fusarium Wilt",
+        "confidence": 3.36
+      },
+      {
+        "name": "7. Rachis Blight",
+        "confidence": 0.42
+      },
+      {
+        "name": "4. Black Scorch",
+        "confidence": 0.25
+      }
+    ],
+    "blockLabel": "Block A",
+    "dateLabel": "2026-09-27",
+    "timeLabel": "13:51:02",
+    "createdAt": "2026-09-27T13:51:02.926084"
+  },
+  {
+    "id": "f5f9abbc-1326-4094-adf2-9531ff35a428",
+    "userEmail": "",
+    "predictedClass": "6. Fusarium Wilt",
+    "diseaseName": "6. Fusarium Wilt",
+    "confidence": 89.24,
+    "differential": [
+      {
+        "name": "6. Fusarium Wilt",
+        "confidence": 89.24
+      },
+      {
+        "name": "Leaf spots",
+        "confidence": 8.1
+      },
+      {
+        "name": "7. Rachis Blight",
+        "confidence": 1.75
+      },
+      {
+        "name": "4. Black Scorch",
+        "confidence": 0.64
+      },
+      {
+        "name": "Healthy sample",
+        "confidence": 0.27
+      }
+    ],
+    "blockLabel": "Block A",
+    "dateLabel": "2026-09-27",
+    "timeLabel": "13:51:42",
+    "createdAt": "2026-09-27T13:51:42.549644"
+  },
+  {
+    "id": "b1920ecb-1920-4877-8de9-44e0e77e1203",
+    "userEmail": "",
+    "predictedClass": "Leaf spots",
+    "diseaseName": "Leaf spots",
+    "confidence": 54.15,
+    "differential": [
+      {
+        "name": "Leaf spots",
+        "confidence": 54.15
+      },
+      {
+        "name": "6. Fusarium Wilt",
+        "confidence": 30.88
+      },
+      {
+        "name": "7. Rachis Blight",
+        "confidence": 7.85
+      },
+      {
+        "name": "Healthy sample",
+        "confidence": 5.91
+      },
+      {
+        "name": "4. Black Scorch",
+        "confidence": 1.21
+      }
+    ],
+    "blockLabel": "Block A",
+    "dateLabel": "2026-09-27",
+    "timeLabel": "14:00:23",
+    "createdAt": "2026-09-27T14:00:23.845722"
+  },
+  {
+    "id": "bb7b4aa2-7d48-4e60-9c90-054425f4cc1a",
+    "userEmail": "",
+    "predictedClass": "6. Fusarium Wilt",
+    "diseaseName": "6. Fusarium Wilt",
+    "confidence": 79.32,
+    "differential": [
+      {
+        "name": "6. Fusarium Wilt",
+        "confidence": 79.32
+      },
+      {
+        "name": "Leaf spots",
+        "confidence": 15.63
+      },
+      {
+        "name": "4. Black Scorch",
+        "confidence": 3.41
+      },
+      {
+        "name": "7. Rachis Blight",
+        "confidence": 0.94
+      },
+      {
+        "name": "Healthy sample",
+        "confidence": 0.69
+      }
+    ],
+    "blockLabel": "Block A",
+    "dateLabel": "2026-09-27",
+    "timeLabel": "14:00:44",
+    "createdAt": "2026-09-27T14:00:44.801744"
+  },
+  {
+    "id": "f40a34a4-d31d-4dae-b6fc-34d1ed7c9322",
+    "userEmail": "",
+    "predictedClass": "Leaf spots",
+    "diseaseName": "Leaf spots",
+    "confidence": 77.65,
+    "differential": [
+      {
+        "name": "Leaf spots",
+        "confidence": 77.65
+      },
+      {
+        "name": "6. Fusarium Wilt",
+        "confidence": 19.59
+      },
+      {
+        "name": "Healthy sample",
+        "confidence": 1.6
+      },
+      {
+        "name": "7. Rachis Blight",
+        "confidence": 0.83
+      },
+      {
+        "name": "4. Black Scorch",
+        "confidence": 0.33
+      }
+    ],
+    "blockLabel": "Block A",
+    "dateLabel": "2026-09-29",
+    "timeLabel": "10:01:08",
+    "createdAt": "2026-09-29T10:01:08.791619"
+  },
+  {
+    "id": "69f94606-29ac-4c3b-af5b-2ee9908cf939",
+    "userEmail": "",
+    "predictedClass": "6. Fusarium Wilt",
+    "diseaseName": "6. Fusarium Wilt",
+    "confidence": 35.57,
+    "differential": [
+      {
+        "name": "6. Fusarium Wilt",
+        "confidence": 35.57
+      },
+      {
+        "name": "4. Black Scorch",
+        "confidence": 28.08
+      },
+      {
+        "name": "Leaf spots",
+        "confidence": 27.19
+      },
+      {
+        "name": "Healthy sample",
+        "confidence": 5.13
+      },
+      {
+        "name": "7. Rachis Blight",
+        "confidence": 4.03
+      }
+    ],
+    "blockLabel": "Block A",
+    "dateLabel": "2026-09-29",
+    "timeLabel": "10:03:23",
+    "createdAt": "2026-09-29T10:03:23.409546"
+  },
+  {
+    "id": "fa9ae5a0-ca9b-4b93-bb1c-f53022f4bb4d",
+    "userEmail": "",
+    "predictedClass": "Leaf spots",
+    "diseaseName": "Leaf spots",
+    "confidence": 69.62,
+    "differential": [
+      {
+        "name": "Leaf spots",
+        "confidence": 69.62
+      },
+      {
+        "name": "6. Fusarium Wilt",
+        "confidence": 11.35
+      },
+      {
+        "name": "7. Rachis Blight",
+        "confidence": 11.16
+      },
+      {
+        "name": "4. Black Scorch",
+        "confidence": 7.25
+      },
+      {
+        "name": "Healthy sample",
+        "confidence": 0.62
+      }
+    ],
+    "blockLabel": "Block A",
+    "dateLabel": "2026-09-29",
+    "timeLabel": "11:36:04",
+    "createdAt": "2026-09-29T11:36:04.864490"
+  },
+  {
+    "id": "a80b8a2f-1c88-4758-bda2-7e826591eab2",
+    "userEmail": "",
+    "predictedClass": "4. Black Scorch",
+    "diseaseName": "4. Black Scorch",
+    "confidence": 67.53,
+    "differential": [
+      {
+        "name": "4. Black Scorch",
+        "confidence": 67.53
+      },
+      {
+        "name": "Leaf spots",
+        "confidence": 25.63
+      },
+      {
+        "name": "7. Rachis Blight",
+        "confidence": 6.68
+      },
+      {
+        "name": "6. Fusarium Wilt",
+        "confidence": 0.08
+      },
+      {
+        "name": "Healthy sample",
+        "confidence": 0.08
+      }
+    ],
+    "blockLabel": "Block A",
+    "dateLabel": "2026-09-29",
+    "timeLabel": "11:36:54",
+    "createdAt": "2026-09-29T11:36:54.122652"
+  },
+  {
+    "id": "0c9ea107-9781-4968-93cf-058144fb8f2a",
+    "userEmail": "",
+    "predictedClass": "6. Fusarium Wilt",
+    "diseaseName": "6. Fusarium Wilt",
+    "confidence": 57.68,
+    "differential": [
+      {
+        "name": "6. Fusarium Wilt",
+        "confidence": 57.68
+      },
+      {
+        "name": "Healthy sample",
+        "confidence": 26.29
+      },
+      {
+        "name": "Leaf spots",
+        "confidence": 13.06
+      },
+      {
+        "name": "7. Rachis Blight",
+        "confidence": 1.78
+      },
+      {
+        "name": "4. Black Scorch",
+        "confidence": 1.2
+      }
+    ],
+    "blockLabel": "Block A",
+    "dateLabel": "2026-09-29",
+    "timeLabel": "11:37:32",
+    "createdAt": "2026-09-29T11:37:32.526652"
+  },
+  {
+    "id": "bfcb379a-3f47-4c5d-a2ab-5f3e3fbd1787",
+    "userEmail": "",
+    "predictedClass": "6. Fusarium Wilt",
+    "diseaseName": "6. Fusarium Wilt",
+    "confidence": 96.06,
+    "differential": [
+      {
+        "name": "6. Fusarium Wilt",
+        "confidence": 96.06
+      },
+      {
+        "name": "4. Black Scorch",
+        "confidence": 1.98
+      },
+      {
+        "name": "Leaf spots",
+        "confidence": 0.74
+      },
+      {
+        "name": "7. Rachis Blight",
+        "confidence": 0.65
+      },
+      {
+        "name": "Healthy sample",
+        "confidence": 0.58
+      }
+    ],
+    "blockLabel": "Block A",
+    "dateLabel": "2026-09-29",
+    "timeLabel": "11:54:04",
+    "createdAt": "2026-09-29T11:54:04.343097"
+  },
+  {
+    "id": "54318563-0a63-4061-849b-e46f556fbc86",
+    "userEmail": "",
+    "predictedClass": "4. Black Scorch",
+    "diseaseName": "4. Black Scorch",
+    "confidence": 58.73,
+    "differential": [
+      {
+        "name": "4. Black Scorch",
+        "confidence": 58.73
+      },
+      {
+        "name": "Leaf spots",
+        "confidence": 40.91
+      },
+      {
+        "name": "6. Fusarium Wilt",
+        "confidence": 0.26
+      },
+      {
+        "name": "7. Rachis Blight",
+        "confidence": 0.05
+      },
+      {
+        "name": "Healthy sample",
+        "confidence": 0.05
+      }
+    ],
+    "blockLabel": "Block A",
+    "dateLabel": "2026-09-29",
+    "timeLabel": "11:55:21",
+    "createdAt": "2026-09-29T11:55:21.061652"
+  },
+  {
+    "id": "96b294bd-a75b-4b1a-9a32-c65ad3275235",
+    "userEmail": "",
+    "predictedClass": "Leaf spots",
+    "diseaseName": "Leaf spots",
+    "confidence": 95.29,
+    "differential": [
+      {
+        "name": "Leaf spots",
+        "confidence": 95.29
+      },
+      {
+        "name": "Healthy sample",
+        "confidence": 2.15
+      },
+      {
+        "name": "4. Black Scorch",
+        "confidence": 2.01
+      },
+      {
+        "name": "7. Rachis Blight",
+        "confidence": 0.54
+      },
+      {
+        "name": "6. Fusarium Wilt",
+        "confidence": 0.02
+      }
+    ],
+    "blockLabel": "Block A",
+    "dateLabel": "2026-09-29",
+    "timeLabel": "11:57:03",
+    "createdAt": "2026-09-29T11:57:03.102350"
+  },
+  {
+    "id": "0e78b85b-0bbc-40af-9d61-68346ff53f41",
+    "userEmail": "lojy1stghamry@gmail.com",
+    "predictedClass": "Leaf spots",
+    "diseaseName": "Leaf spots",
+    "confidence": 67.31,
+    "differential": [
+      {
+        "name": "Leaf spots",
+        "confidence": 67.31
+      },
+      {
+        "name": "6. Fusarium Wilt",
+        "confidence": 19.32
+      },
+      {
+        "name": "4. Black Scorch",
+        "confidence": 6.61
+      },
+      {
+        "name": "7. Rachis Blight",
+        "confidence": 6.48
+      },
+      {
+        "name": "Healthy sample",
+        "confidence": 0.28
+      }
+    ],
+    "blockLabel": "Block A",
+    "dateLabel": "2026-09-29",
+    "timeLabel": "13:07:09",
+    "createdAt": "2026-09-29T13:07:09.589467"
+  }
+]

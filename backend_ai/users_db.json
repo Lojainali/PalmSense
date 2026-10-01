@@ -1,0 +1,44 @@
+{
+  "lojy1stghamry@gmail.com": {
+    "password": "12345678",
+    "doc": {
+      "uid": "3791caeb-2535-4a53-8238-8a415a146688",
+      "fullName": "lojain Ali",
+      "email": "lojy1stghamry@gmail.com",
+      "phoneNumber": "123456789",
+      "farmName": "farm",
+      "location": "Egypt",
+      "farmBlocks": 1,
+      "totalPalmCount": 0,
+      "createdAt": "2026-09-27T10:27:50.812827"
+    }
+  },
+  "lujainelghamry2020@gmail.com": {
+    "password": "12345678",
+    "doc": {
+      "uid": "24cecbc8-05f6-495a-85fc-a164bd7508b7",
+      "fullName": "lujy",
+      "email": "lujainelghamry2020@gmail.com",
+      "phoneNumber": "1234567892",
+      "farmName": "farm2",
+      "location": "Oman",
+      "farmBlocks": 1,
+      "totalPalmCount": 0,
+      "createdAt": "2026-09-29T10:11:54.724051"
+    }
+  },
+  "lojain.ali@msa.edu.eg": {
+    "password": "12345678",
+    "doc": {
+      "uid": "0cd845c5-22d8-4432-adcf-e208228073e2",
+      "fullName": "lojain",
+      "email": "lojain.ali@msa.edu.eg",
+      "phoneNumber": "123456787",
+      "farmName": "farm3",
+      "location": "Jordan",
+      "farmBlocks": 1,
+      "totalPalmCount": 0,
+      "createdAt": "2026-09-29T10:13:29.449744"
+    }
+  }
+}
